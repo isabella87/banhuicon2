@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SysManager" targetNamespace="http://tempuri.org/SysManager.xsd" xmlns:mstns="http://tempuri.org/SysManager.xsd" xmlns="http://tempuri.org/SysManager.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SysManager" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SysManager" msprop:Generator_UserDSName="SysManager">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SysUser" msprop:Generator_TableClassName="SysUserDataTable" msprop:Generator_TableVarName="tableSysUser" msprop:Generator_TablePropName="SysUser" msprop:Generator_RowDeletingName="SysUserRowDeleting" msprop:Generator_RowChangingName="SysUserRowChanging" msprop:Generator_RowEvHandlerName="SysUserRowChangeEventHandler" msprop:Generator_RowDeletedName="SysUserRowDeleted" msprop:Generator_UserTableName="SysUser" msprop:Generator_RowChangedName="SysUserRowChanged" msprop:Generator_RowEvArgName="SysUserRowChangeEvent" msprop:Generator_RowClassName="SysUserRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName" type="xs:string" minOccurs="0" />
+              <xs:element name="Roles" msprop:Generator_ColumnVarNameInTable="columnRoles" msprop:Generator_ColumnPropNameInRow="Roles" msprop:Generator_ColumnPropNameInTable="RolesColumn" msprop:Generator_UserColumnName="Roles" type="xs:string" minOccurs="0" />
+              <xs:element name="Mobile" msprop:Generator_ColumnVarNameInTable="columnMobile" msprop:Generator_ColumnPropNameInRow="Mobile" msprop:Generator_ColumnPropNameInTable="MobileColumn" msprop:Generator_UserColumnName="Mobile" type="xs:string" minOccurs="0" />
+              <xs:element name="EMail" msprop:Generator_ColumnVarNameInTable="columnEMail" msprop:Generator_ColumnPropNameInRow="EMail" msprop:Generator_ColumnPropNameInTable="EMailColumn" msprop:Generator_UserColumnName="EMail" type="xs:string" minOccurs="0" />
+              <xs:element name="Enabled" msprop:Generator_ColumnVarNameInTable="columnEnabled" msprop:Generator_ColumnPropNameInRow="Enabled" msprop:Generator_ColumnPropNameInTable="EnabledColumn" msprop:Generator_UserColumnName="Enabled" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" msprop:Generator_UserColumnName="CreateDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SysRole" msprop:Generator_TableClassName="SysRoleDataTable" msprop:Generator_TableVarName="tableSysRole" msprop:Generator_TablePropName="SysRole" msprop:Generator_RowDeletingName="SysRoleRowDeleting" msprop:Generator_RowChangingName="SysRoleRowChanging" msprop:Generator_RowEvHandlerName="SysRoleRowChangeEventHandler" msprop:Generator_RowDeletedName="SysRoleRowDeleted" msprop:Generator_UserTableName="SysRole" msprop:Generator_RowChangedName="SysRoleRowChanged" msprop:Generator_RowEvArgName="SysRoleRowChangeEvent" msprop:Generator_RowClassName="SysRoleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RoleName" msprop:Generator_ColumnVarNameInTable="columnRoleName" msprop:Generator_ColumnPropNameInRow="RoleName" msprop:Generator_ColumnPropNameInTable="RoleNameColumn" msprop:Generator_UserColumnName="RoleName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

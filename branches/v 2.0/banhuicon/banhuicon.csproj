@@ -1,0 +1,1274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8068F930-EC63-45D3-B1EB-4D84D00C934D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Banhuitong.Console</RootNamespace>
+    <AssemblyName>banhuicon</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <NoWarn>0168</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>App72.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Markdown, Version=2.0.0.0, Culture=neutral, PublicKeyToken=1b320cc08ad5aa89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Markdown.2.2.1\lib\net451\Markdown.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MyLib.UI">
+      <HintPath>..\packages\MyLib.UI\MyLib.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.2.1\lib\net40\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.2.1\lib\net40\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.2.1\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.2.1\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccBankRunning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccBankRunning.Designer.cs">
+      <DependentUpon>AccBankRunning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccBorrowsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccBorrowsDlg.Designer.cs">
+      <DependentUpon>AccBorrowsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccCreditInsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccCreditInsDlg.designer.cs">
+      <DependentUpon>AccCreditInsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccFreezeMoneyDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccFreezeMoneyDlg.Designer.cs">
+      <DependentUpon>AccFreezeMoneyDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccHistoryInvestDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccHistoryInvestDlg.Designer.cs">
+      <DependentUpon>AccHistoryInvestDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccHistoryRunningsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccHistoryRunningsDlg.Designer.cs">
+      <DependentUpon>AccHistoryRunningsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccInvestDepositoryDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccInvestDepositoryDlg.Designer.cs">
+      <DependentUpon>AccInvestDepositoryDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccInvestPlatFormDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccInvestPlatFormDlg.Designer.cs">
+      <DependentUpon>AccInvestPlatFormDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccMessageDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccMessageDlg.Designer.cs">
+      <DependentUpon>AccMessageDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccMonthReportsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccMonthReportsDlg.Designer.cs">
+      <DependentUpon>AccMonthReportsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccOrgDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccOrgDlg.Designer.cs">
+      <DependentUpon>AccOrgDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account\DataStatistic.cs" />
+    <Compile Include="Account\InvestBase.cs" />
+    <Compile Include="Account\BusinessTransfers.cs" />
+    <Compile Include="Account\FreezeMoney.cs" />
+    <Compile Include="Account\InvestOrgs.cs" />
+    <Compile Include="Account\InvestPersons.cs" />
+    <Compile Include="Account\Messages.cs" />
+    <Compile Include="AccPersonDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccPersonDlg.Designer.cs">
+      <DependentUpon>AccPersonDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccRechargesDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccRechargesDlg.Designer.cs">
+      <DependentUpon>AccRechargesDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccRunningsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccRunningsDlg.Designer.cs">
+      <DependentUpon>AccRunningsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccTendersDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccTendersDlg.designer.cs">
+      <DependentUpon>AccTendersDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccWithDrawsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccWithDrawsDlg.designer.cs">
+      <DependentUpon>AccWithDrawsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllowInvestorsAddDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllowInvestorsAddDlg.Designer.cs">
+      <DependentUpon>AllowInvestorsAddDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllowInvestorsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllowInvestorsDlg.Designer.cs">
+      <DependentUpon>AllowInvestorsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BankInfoOrgDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BankInfoOrgDlg.designer.cs">
+      <DependentUpon>BankInfoOrgDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\Files.cs" />
+    <Compile Include="BaseData\PrjGuaranteePers.cs" />
+    <Compile Include="BaseData\PrjSignAgreements.cs" />
+    <Compile Include="BaseData\AppVersion.cs" />
+    <Compile Include="CreatePrjEntGuaranteeOrgDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePrjEntGuaranteeOrgDlg.Designer.cs">
+      <DependentUpon>CreatePrjEntGuaranteeOrgDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePrjEntGuaranteePerDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePrjEntGuaranteePerDlg.designer.cs">
+      <DependentUpon>CreatePrjEntGuaranteePerDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmBindMgrAndCrmInvestorDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmBindMgrAndCrmInvestorDlg.Designer.cs">
+      <DependentUpon>CrmBindMgrAndCrmInvestorDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmAddMgrDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmAddMgrDlg.Designer.cs">
+      <DependentUpon>CrmAddMgrDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmAssignRegUserDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmAssignRegUserDlg.Designer.cs">
+      <DependentUpon>CrmAssignRegUserDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BankInfoPersonDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BankInfoPersonDlg.Designer.cs">
+      <DependentUpon>BankInfoPersonDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BatchProcessDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BatchProcessDlg.Designer.cs">
+      <DependentUpon>BatchProcessDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessTransferAddOneDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusinessTransferAddOneDlg.Designer.cs">
+      <DependentUpon>BusinessTransferAddOneDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessTransferDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusinessTransferDlg.Designer.cs">
+      <DependentUpon>BusinessTransferDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePwdDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePwdDlg.Designer.cs">
+      <DependentUpon>ChangePwdDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePrjEntBorOrgDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePrjEntBorOrgDlg.designer.cs">
+      <DependentUpon>CreatePrjEntBorOrgDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePrjEntBorPerDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePrjEntBorPerDlg.Designer.cs">
+      <DependentUpon>CreatePrjEntBorPerDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmBindMgrAndCrmInvestor2Dlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmBindMgrAndCrmInvestor2Dlg.Designer.cs">
+      <DependentUpon>CrmBindMgrAndCrmInvestor2Dlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmBindMgrAndCrmInvestorHistoryDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmBindMgrAndCrmInvestorHistoryDlg.Designer.cs">
+      <DependentUpon>CrmBindMgrAndCrmInvestorHistoryDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmCstmOfMgrByMonthDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmCstmOfMgrByMonthDlg.designer.cs">
+      <DependentUpon>CrmCstmOfMgrByMonthDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmInvestorDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmInvestorDlg.Designer.cs">
+      <DependentUpon>CrmInvestorDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmInvestorRemarksDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmInvestorRemarksDlg.Designer.cs">
+      <DependentUpon>CrmInvestorRemarksDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmMgrDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmMgrDlg.Designer.cs">
+      <DependentUpon>CrmMgrDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmMyRegUsersFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmMyRegUsersFrm.Designer.cs">
+      <DependentUpon>CrmMyRegUsersFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmPerformanceStatisticByMonthFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmPerformanceStatisticByMonthFrm.designer.cs">
+      <DependentUpon>CrmPerformanceStatisticByMonthFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmSelMgrDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmSelMgrDlg.Designer.cs">
+      <DependentUpon>CrmSelMgrDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmSpreadQrcodeDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmSpreadQrcodeDlg.Designer.cs">
+      <DependentUpon>CrmSpreadQrcodeDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmTodoDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmTodoDlg.Designer.cs">
+      <DependentUpon>CrmTodoDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmCstmOfMgrByDailyDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmCstmOfMgrByDailyDlg.Designer.cs">
+      <DependentUpon>CrmCstmOfMgrByDailyDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomAttribute\JurisdictionAttribute.cs" />
+    <Compile Include="ErrorCodeHelpDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorCodeHelpDlg.Designer.cs">
+      <DependentUpon>ErrorCodeHelpDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Excel\ExcelHelper.cs" />
+    <Compile Include="Excel\ExportExcelDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Excel\ExportExcelDlg.Designer.cs">
+      <DependentUpon>ExportExcelDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Excel\ImportExcelDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Excel\ImportExcelDlg.Designer.cs">
+      <DependentUpon>ImportExcelDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadFileDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DownloadFileDlg.Designer.cs">
+      <DependentUpon>DownloadFileDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportWizardDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportWizardDlg.Designer.cs">
+      <DependentUpon>ImportWizardDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FilesDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilesDlg.Designer.cs">
+      <DependentUpon>FilesDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysRoleRightsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysRoleRightsDlg.Designer.cs">
+      <DependentUpon>SysRoleRightsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewInvestorsStatisticDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewInvestorsStatisticDlg.Designer.cs">
+      <DependentUpon>NewInvestorsStatisticDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyStatisticDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyStatisticDlg.Designer.cs">
+      <DependentUpon>DailyStatisticDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnterprisePrjDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterprisePrjDlg.designer.cs">
+      <DependentUpon>EnterprisePrjDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnterprisePrjFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterprisePrjFrm.designer.cs">
+      <DependentUpon>EnterprisePrjFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoanUploadTimeDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoanUploadTimeDlg.designer.cs">
+      <DependentUpon>LoanUploadTimeDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonthStatisticDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthStatisticDlg.Designer.cs">
+      <DependentUpon>MonthStatisticDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewBonusDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreviewBonusDlg.Designer.cs">
+      <DependentUpon>PreviewBonusDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjAuditDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjAuditDlg.Designer.cs">
+      <DependentUpon>PrjAuditDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjBorOrgDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjBorOrgDlg.Designer.cs">
+      <DependentUpon>PrjBorOrgDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjBorPersonDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjBorPersonDlg.Designer.cs">
+      <DependentUpon>PrjBorPersonDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commons2.cs" />
+    <Compile Include="Crm\CrmInvestor.cs" />
+    <Compile Include="Crm\CrmPerformance.cs" />
+    <Compile Include="CrmCommons.cs" />
+    <Compile Include="PrjCancelTenderDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjCancelTenderDlg.Designer.cs">
+      <DependentUpon>PrjCancelTenderDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjGuaranteePerDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjGuaranteePerDlg.designer.cs">
+      <DependentUpon>PrjGuaranteePerDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjGuaranteePerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjGuaranteePerFrm.designer.cs">
+      <DependentUpon>PrjGuaranteePerFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjInvestDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjInvestDlg.Designer.cs">
+      <DependentUpon>PrjInvestDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjInvestorsTableDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjInvestorsTableDlg.Designer.cs">
+      <DependentUpon>PrjInvestorsTableDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjLoansDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjLoansDlg.Designer.cs">
+      <DependentUpon>PrjLoansDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjRemarkDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjRemarkDlg.Designer.cs">
+      <DependentUpon>PrjRemarkDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjRepayDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjRepayDlg.Designer.cs">
+      <DependentUpon>PrjRepayDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjRepayRecordDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjRepayRecordDlg.Designer.cs">
+      <DependentUpon>PrjRepayRecordDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjSignAgreementsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjSignAgreementsDlg.Designer.cs">
+      <DependentUpon>PrjSignAgreementsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjSignInfoDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjSignInfoDlg.Designer.cs">
+      <DependentUpon>PrjSignInfoDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjTendersDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjTendersDlg.Designer.cs">
+      <DependentUpon>PrjTendersDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjTendersUncheckedDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjTendersUncheckedDlg.Designer.cs">
+      <DependentUpon>PrjTendersUncheckedDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectCreateDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectCreateDlg.Designer.cs">
+      <DependentUpon>ProjectCreateDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjCtorDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjCtorDlg.Designer.cs">
+      <DependentUpon>PrjCtorDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjEngineerDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjEngineerDlg.Designer.cs">
+      <DependentUpon>PrjEngineerDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjGuaranteeOrgDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjGuaranteeOrgDlg.Designer.cs">
+      <DependentUpon>PrjGuaranteeOrgDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjOwnerDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjOwnerDlg.Designer.cs">
+      <DependentUpon>PrjOwnerDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Projs\Projects.cs" />
+    <Compile Include="Projs\CreditAssignProjs.cs" />
+    <Compile Include="Projs\Wyjks.cs" />
+    <Compile Include="CrmRegUserFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmRegUserFrm.Designer.cs">
+      <DependentUpon>CrmRegUserFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepayUploadTimeDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepayUploadTimeDlg.Designer.cs">
+      <DependentUpon>RepayUploadTimeDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccMessageFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccMessageFrm.Designer.cs">
+      <DependentUpon>AccMessageFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccOrgsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccOrgsFrm.Designer.cs">
+      <DependentUpon>AccOrgsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccPersonsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccPersonsFrm.Designer.cs">
+      <DependentUpon>AccPersonsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseData\PrjBorOrgs.cs" />
+    <Compile Include="BaseData\PrjCtors.cs" />
+    <Compile Include="BaseData\PrjEngineers.cs" />
+    <Compile Include="BaseData\PrjGuaranteeOrgs.cs" />
+    <Compile Include="BaseData\PrjOwners.cs" />
+    <Compile Include="BaseData\PrjBorPersons.cs" />
+    <Compile Include="Commons.cs" />
+    <Compile Include="BusinessTransferFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusinessTransferFrm.Designer.cs">
+      <DependentUpon>BusinessTransferFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreditAssignProjectFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditAssignProjectFrm.Designer.cs">
+      <DependentUpon>CreditAssignProjectFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmInvestorFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmInvestorFrm.Designer.cs">
+      <DependentUpon>CrmInvestorFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmInvestor2To1Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmInvestor2To1Frm.Designer.cs">
+      <DependentUpon>CrmInvestor2To1Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmInvestor3TimeOutFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmInvestor3TimeOutFrm.Designer.cs">
+      <DependentUpon>CrmInvestor3TimeOutFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmMgrsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmMgrsFrm.Designer.cs">
+      <DependentUpon>CrmMgrsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmMyInvestorsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmMyInvestorsFrm.Designer.cs">
+      <DependentUpon>CrmMyInvestorsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmNewRegsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmNewRegsFrm.Designer.cs">
+      <DependentUpon>CrmNewRegsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmPerformanceStatisticByDailyFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmPerformanceStatisticByDailyFrm.Designer.cs">
+      <DependentUpon>CrmPerformanceStatisticByDailyFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrmInvestor3To2Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrmInvestor3To2Frm.Designer.cs">
+      <DependentUpon>CrmInvestor3To2Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjBorOrgFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjBorOrgFrm.Designer.cs">
+      <DependentUpon>PrjBorOrgFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjCtorFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjCtorFrm.Designer.cs">
+      <DependentUpon>PrjCtorFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjEngineerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjEngineerFrm.Designer.cs">
+      <DependentUpon>PrjEngineerFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjGuaranteeOrgFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjGuaranteeOrgFrm.Designer.cs">
+      <DependentUpon>PrjGuaranteeOrgFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjOwnerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjOwnerFrm.Designer.cs">
+      <DependentUpon>PrjOwnerFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrjBorPersonsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrjBorPersonsFrm.Designer.cs">
+      <DependentUpon>PrjBorPersonsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rpc\ResultFormatException.cs" />
+    <Compile Include="Security\Roles.cs" />
+    <Compile Include="Security\Users.cs" />
+    <Compile Include="SelPrjBorDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelPrjBorDlg.Designer.cs">
+      <DependentUpon>SelPrjBorDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelPrjGuaranteeOrgDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelPrjGuaranteeOrgDlg.Designer.cs">
+      <DependentUpon>SelPrjGuaranteeOrgDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelPrjGuaranteePerDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelPrjGuaranteePerDlg.designer.cs">
+      <DependentUpon>SelPrjGuaranteePerDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelPrjMgrOrgDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelPrjMgrOrgDlg.Designer.cs">
+      <DependentUpon>SelPrjMgrOrgDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelPrjMgrPerDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelPrjMgrPerDlg.Designer.cs">
+      <DependentUpon>SelPrjMgrPerDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysRoleMgrDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysRoleMgrDlg.Designer.cs">
+      <DependentUpon>SysRoleMgrDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysRoleMgrFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysRoleMgrFrm.Designer.cs">
+      <DependentUpon>SysRoleMgrFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnsafeNativeMethods.cs" />
+    <Compile Include="VipStatisticDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VipStatisticDlg.Designer.cs">
+      <DependentUpon>VipStatisticDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WyjksDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WyjksDlg.Designer.cs">
+      <DependentUpon>WyjksDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WyjksFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WyjksFrm.Designer.cs">
+      <DependentUpon>WyjksFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorDlg.Designer.cs">
+      <DependentUpon>ErrorDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionsDlg.Designer.cs">
+      <DependentUpon>OptionsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rpc\Http.cs" />
+    <Compile Include="Rpc\Result.cs" />
+    <Compile Include="Rpc\RpcException.cs" />
+    <Compile Include="Security\SignIn.cs" />
+    <Compile Include="SignInDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignInDlg.Designer.cs">
+      <DependentUpon>SignInDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysUsersFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysUsersFrm.Designer.cs">
+      <DependentUpon>SysUsersFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysUserDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysUserDlg.Designer.cs">
+      <DependentUpon>SysUserDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YiMeiMessagesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YiMeiMessagesFrm.Designer.cs">
+      <DependentUpon>YiMeiMessagesFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccBankRunning.resx">
+      <DependentUpon>AccBankRunning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccBorrowsDlg.resx">
+      <DependentUpon>AccBorrowsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccCreditInsDlg.resx">
+      <DependentUpon>AccCreditInsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccFreezeMoneyDlg.resx">
+      <DependentUpon>AccFreezeMoneyDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccHistoryInvestDlg.resx">
+      <DependentUpon>AccHistoryInvestDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccHistoryRunningsDlg.resx">
+      <DependentUpon>AccHistoryRunningsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccInvestDepositoryDlg.resx">
+      <DependentUpon>AccInvestDepositoryDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccInvestPlatFormDlg.resx">
+      <DependentUpon>AccInvestPlatFormDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccMessageDlg.resx">
+      <DependentUpon>AccMessageDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccMonthReportsDlg.resx">
+      <DependentUpon>AccMonthReportsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccOrgDlg.resx">
+      <DependentUpon>AccOrgDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccPersonDlg.resx">
+      <DependentUpon>AccPersonDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccRechargesDlg.resx">
+      <DependentUpon>AccRechargesDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccRunningsDlg.resx">
+      <DependentUpon>AccRunningsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccTendersDlg.resx">
+      <DependentUpon>AccTendersDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccWithDrawsDlg.resx">
+      <DependentUpon>AccWithDrawsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllowInvestorsAddDlg.resx">
+      <DependentUpon>AllowInvestorsAddDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllowInvestorsDlg.resx">
+      <DependentUpon>AllowInvestorsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BankInfoOrgDlg.resx">
+      <DependentUpon>BankInfoOrgDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePrjEntGuaranteeOrgDlg.resx">
+      <DependentUpon>CreatePrjEntGuaranteeOrgDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePrjEntGuaranteePerDlg.resx">
+      <DependentUpon>CreatePrjEntGuaranteePerDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmBindMgrAndCrmInvestorDlg.resx">
+      <DependentUpon>CrmBindMgrAndCrmInvestorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmAddMgrDlg.resx">
+      <DependentUpon>CrmAddMgrDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmAssignRegUserDlg.resx">
+      <DependentUpon>CrmAssignRegUserDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BankInfoPersonDlg.resx">
+      <DependentUpon>BankInfoPersonDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BatchProcessDlg.resx">
+      <DependentUpon>BatchProcessDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessTransferAddOneDlg.resx">
+      <DependentUpon>BusinessTransferAddOneDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessTransferDlg.resx">
+      <DependentUpon>BusinessTransferDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePwdDlg.resx">
+      <DependentUpon>ChangePwdDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePrjEntBorOrgDlg.resx">
+      <DependentUpon>CreatePrjEntBorOrgDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePrjEntBorPerDlg.resx">
+      <DependentUpon>CreatePrjEntBorPerDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmBindMgrAndCrmInvestor2Dlg.resx">
+      <DependentUpon>CrmBindMgrAndCrmInvestor2Dlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmBindMgrAndCrmInvestorHistoryDlg.resx">
+      <DependentUpon>CrmBindMgrAndCrmInvestorHistoryDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmCstmOfMgrByMonthDlg.resx">
+      <DependentUpon>CrmCstmOfMgrByMonthDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmInvestorDlg.resx">
+      <DependentUpon>CrmInvestorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmInvestorRemarksDlg.resx">
+      <DependentUpon>CrmInvestorRemarksDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmMgrDlg.resx">
+      <DependentUpon>CrmMgrDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmMyRegUsersFrm.resx">
+      <DependentUpon>CrmMyRegUsersFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmPerformanceStatisticByMonthFrm.resx">
+      <DependentUpon>CrmPerformanceStatisticByMonthFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmSelMgrDlg.resx">
+      <DependentUpon>CrmSelMgrDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmSpreadQrcodeDlg.resx">
+      <DependentUpon>CrmSpreadQrcodeDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmTodoDlg.resx">
+      <DependentUpon>CrmTodoDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmCstmOfMgrByDailyDlg.resx">
+      <DependentUpon>CrmCstmOfMgrByDailyDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorCodeHelpDlg.resx">
+      <DependentUpon>ErrorCodeHelpDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Excel\ExportExcelDlg.resx">
+      <DependentUpon>ExportExcelDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Excel\ImportExcelDlg.resx">
+      <DependentUpon>ImportExcelDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownloadFileDlg.resx">
+      <DependentUpon>DownloadFileDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportWizardDlg.resx">
+      <DependentUpon>ImportWizardDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilesDlg.resx">
+      <DependentUpon>FilesDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewInvestorsStatisticDlg.resx">
+      <DependentUpon>NewInvestorsStatisticDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyStatisticDlg.resx">
+      <DependentUpon>DailyStatisticDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterprisePrjDlg.resx">
+      <DependentUpon>EnterprisePrjDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterprisePrjFrm.resx">
+      <DependentUpon>EnterprisePrjFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoanUploadTimeDlg.resx">
+      <DependentUpon>LoanUploadTimeDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthStatisticDlg.resx">
+      <DependentUpon>MonthStatisticDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviewBonusDlg.resx">
+      <DependentUpon>PreviewBonusDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjAuditDlg.resx">
+      <DependentUpon>PrjAuditDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjBorOrgDlg.resx">
+      <DependentUpon>PrjBorOrgDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjBorPersonDlg.resx">
+      <DependentUpon>PrjBorPersonDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjCancelTenderDlg.resx">
+      <DependentUpon>PrjCancelTenderDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjGuaranteePerDlg.resx">
+      <DependentUpon>PrjGuaranteePerDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjGuaranteePerFrm.resx">
+      <DependentUpon>PrjGuaranteePerFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjInvestDlg.resx">
+      <DependentUpon>PrjInvestDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjInvestorsTableDlg.resx">
+      <DependentUpon>PrjInvestorsTableDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjLoansDlg.resx">
+      <DependentUpon>PrjLoansDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjRemarkDlg.resx">
+      <DependentUpon>PrjRemarkDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjRepayDlg.resx">
+      <DependentUpon>PrjRepayDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjRepayRecordDlg.resx">
+      <DependentUpon>PrjRepayRecordDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjSignAgreementsDlg.resx">
+      <DependentUpon>PrjSignAgreementsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjSignInfoDlg.resx">
+      <DependentUpon>PrjSignInfoDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjTendersDlg.resx">
+      <DependentUpon>PrjTendersDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjTendersUncheckedDlg.resx">
+      <DependentUpon>PrjTendersUncheckedDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectCreateDlg.resx">
+      <DependentUpon>ProjectCreateDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjCtorDlg.resx">
+      <DependentUpon>PrjCtorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjEngineerDlg.resx">
+      <DependentUpon>PrjEngineerDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjGuaranteeOrgDlg.resx">
+      <DependentUpon>PrjGuaranteeOrgDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjOwnerDlg.resx">
+      <DependentUpon>PrjOwnerDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmRegUserFrm.resx">
+      <DependentUpon>CrmRegUserFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepayUploadTimeDlg.resx">
+      <DependentUpon>RepayUploadTimeDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccMessageFrm.resx">
+      <DependentUpon>AccMessageFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccOrgsFrm.resx">
+      <DependentUpon>AccOrgsFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccPersonsFrm.resx">
+      <DependentUpon>AccPersonsFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessTransferFrm.resx">
+      <DependentUpon>BusinessTransferFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditAssignProjectFrm.resx">
+      <DependentUpon>CreditAssignProjectFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmInvestorFrm.resx">
+      <DependentUpon>CrmInvestorFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmInvestor2To1Frm.resx">
+      <DependentUpon>CrmInvestor2To1Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmInvestor3TimeOutFrm.resx">
+      <DependentUpon>CrmInvestor3TimeOutFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmMgrsFrm.resx">
+      <DependentUpon>CrmMgrsFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmMyInvestorsFrm.resx">
+      <DependentUpon>CrmMyInvestorsFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmNewRegsFrm.resx">
+      <DependentUpon>CrmNewRegsFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmPerformanceStatisticByDailyFrm.resx">
+      <DependentUpon>CrmPerformanceStatisticByDailyFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorDlg.resx">
+      <DependentUpon>ErrorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrmInvestor3To2Frm.resx">
+      <DependentUpon>CrmInvestor3To2Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelPrjBorDlg.resx">
+      <DependentUpon>SelPrjBorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelPrjGuaranteeOrgDlg.resx">
+      <DependentUpon>SelPrjGuaranteeOrgDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelPrjGuaranteePerDlg.resx">
+      <DependentUpon>SelPrjGuaranteePerDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelPrjMgrOrgDlg.resx">
+      <DependentUpon>SelPrjMgrOrgDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelPrjMgrPerDlg.resx">
+      <DependentUpon>SelPrjMgrPerDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysRoleMgrDlg.resx">
+      <DependentUpon>SysRoleMgrDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysRoleMgrFrm.resx">
+      <DependentUpon>SysRoleMgrFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionsDlg.resx">
+      <DependentUpon>OptionsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjBorOrgFrm.resx">
+      <DependentUpon>PrjBorOrgFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjCtorFrm.resx">
+      <DependentUpon>PrjCtorFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjEngineerFrm.resx">
+      <DependentUpon>PrjEngineerFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjGuaranteeOrgFrm.resx">
+      <DependentUpon>PrjGuaranteeOrgFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjOwnerFrm.resx">
+      <DependentUpon>PrjOwnerFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrjBorPersonsFrm.resx">
+      <DependentUpon>PrjBorPersonsFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SignInDlg.resx">
+      <DependentUpon>SignInDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysUsersFrm.resx">
+      <DependentUpon>SysUsersFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VipStatisticDlg.resx">
+      <DependentUpon>VipStatisticDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WyjksDlg.resx">
+      <DependentUpon>WyjksDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WyjksFrm.resx">
+      <DependentUpon>WyjksFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysUserDlg.resx">
+      <DependentUpon>SysUserDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YiMeiMessagesFrm.resx">
+      <DependentUpon>YiMeiMessagesFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App72.ico" />
+    <Content Include="App72.png" />
+    <Content Include="Resources\App72.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

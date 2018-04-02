@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Banhuitong.Console.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MainFrm_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="MainFrm_Size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="MainFrm_State" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="LastUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Update_BaseUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://192.168.11.30</Value>
+    </Setting>
+    <Setting Name="Rpc_BaseUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www.banbank.com</Value>
+    </Setting>
+    <Setting Name="Rpc_BaseUrlDebug" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://192.168.11.30</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

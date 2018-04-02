@@ -1,0 +1,80 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+
+namespace Banhuitong.Console {
+    using Projs;
+    using Rpc;
+    public partial class CreatePrjEntGuaranteePerDlg : Form {
+        private static readonly TextValues VISIBLE;
+        private long m_pId;
+        private long m_bgpId = 0;
+        public IResult DlgResult;
+
+        static CreatePrjEntGuaranteePerDlg() {
+            VISIBLE = new TextValues()
+                .AddNew("可见", 1)
+                .AddNew("不可见", 0);
+        }
+
+        public CreatePrjEntGuaranteePerDlg(long id) {
+            InitializeComponent();
+            m_pId = id;
+            DlgResult = new JsonResult("{}");
+        }
+
+        private void CreatePrjEntGuaranteeDlg_Load(object sender, EventArgs e) {
+            this.Text = this.Text + "-" + m_pId;
+
+            cbbVisible.BindTo(VISIBLE);
+        }
+
+        private void btnSelGuarantee_Click(object sender, EventArgs e) {
+            var dlg = new SelPrjGuaranteePerDlg(m_bgpId);
+            dlg.StartPosition = FormStartPosition.CenterParent;
+            if (dlg.ShowDialog(this) == DialogResult.OK) {
+                m_bgpId = dlg.SelGuaId;
+                labRealName.Text = dlg.SelGuaName;
+                tbShowName.Text = dlg.SelGuaShowName;
+            }
+        }
+
+        private async void SaveData() {
+            if (m_bgpId == 0 || m_bgpId == -1) {
+                Commons.ShowInfoBox(this, "请选择一个担保人!");
+                btnSelGuarantee.Focus();
+                return;
+            }
+
+            var p = new Dictionary<string, object>();
+            p["pid"] = m_pId;
+            p["bgp-id"] = m_bgpId;
+            p["guara-high-credit-amt"] = (int)nudGuaraHighCreditAmt.Value;
+            p["main-credit-amt"] = (int)nudMainCreditAmt.Value;
+            p["form"] = cbbTypes.Text.Trim();
+            p["range"] = cbbRange.Text.Trim();
+            p["limit"] = cbbLimit.Text.Trim();
+            p["last-year-income"] = (int)nudLastYearIncome.Value;
+            p["relation-ship"] = cbbRelationShip.Text.Trim();
+            p["guarantee-right-man"] = tbGuaRightMan.Text.Trim();
+            p["guarantee-right-man-no"] = tbGuaRightManNo.Text.Trim();
+            p["order-no"] = (int)nudOrder.Value;
+            p["visible"] = cbbVisible.GetSelectedValue();
+
+            var r = await Projects.GuaranteePerPut(p);
+            if (r.IsOk) {
+                DlgResult = r;
+                DialogResult = DialogResult.OK;
+            } else {
+                Commons.ShowResultErrorBox(this, r);
+            }
+
+        }
+
+        private void btnOk_Click(object sender, EventArgs e) {
+            if (this.ValidateChildren())
+                SaveData();
+        }
+
+    }
+}
