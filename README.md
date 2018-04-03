@@ -84,7 +84,7 @@ git push -u origin master
 
 # git值gui客户端界面操作
 
-喔喔，这家伙很懒，没有什么可以写的。
+喔喔，这家伙很懒，没有什么可以写的。注意忽略文件（.gitignore）就行。
 
 
 
